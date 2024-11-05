@@ -1,0 +1,55 @@
+/* home.php */
+
+:root {
+    --cursor-logo: url("images/torche.png"), auto;
+    --cursor-logo-pointer: url("images/test.png"), auto;
+}
+
+button {
+    border: none;
+    background: none;
+}
+
+.titre-principal {
+    text-align: center;
+}
+
+.carroussel-image, .image-accueil {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 5px;
+}
+
+.image-accueil {
+    filter: brightness(30%);
+    border-radius: 15px;
+    cursor: var(--cursor-logo-pointer);
+}
+
+.carroussel-image-relative {
+    position: relative;
+    width: max-content;
+}
+
+.carroussel-image-relative .desc-image {
+    position: absolute;
+    width: 90%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.3em;
+    color: aliceblue;
+}
+
+
+.carroussel-image-relative a:hover > .image-accueil {
+    filter: none;
+    transition: 0.3s;
+}
+
+
+
+/* fin home.php */
