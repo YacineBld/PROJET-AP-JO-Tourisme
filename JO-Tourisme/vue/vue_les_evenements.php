@@ -31,6 +31,8 @@
                     <td>" . $unEvenement["idcategorie"] . "</td>";
 
             //Opération supprimer et modifier
+                // Vérifier si l'utilisateur est un professionnel (role == 'pro')
+        if (isset($_SESSION['role']) && $_SESSION['role'] == 'clientPro') {
                 echo "<td>";
                 echo "<a class='img-dif' href='index.php?page=1&action=sup&idevenement=" . $unEvenement['idevenement'] . "'>";
                 echo "<img src='images/Delete.png' height='30' width='30'";
@@ -39,8 +41,13 @@
                 echo "<img src='images/Edit.png' height='30' width='30'";
                 echo "</a>";
                 echo "</td>";
-            echo "</tr>";
+            } else {
+                // Si l'utilisateur n'est pas un professionnel, ne pas afficher les options de modification/suppression
+                echo "<td>Aucune action disponible</td>";
+            }
+                echo "</tr>";
         }
         ?>
     </table>
 </main>
+

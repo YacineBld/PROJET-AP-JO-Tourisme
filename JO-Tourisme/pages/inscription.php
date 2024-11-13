@@ -10,7 +10,7 @@ $controleur = new ControleurUser($serveur, $serveur2, $bdd, $user, $mdp, $mdp2);
 
     <form action="#" method="POST">
         <table>
-            <tr>margin-right: 100px;
+            <tr>
                 <td><input type="submit" name="Particulier" value="Particulier" style="font-size: 1.5em; padding: 10px 20px;"></td>
                 <td><input type="submit" name="Professionnel" value="Professionnel" style="font-size: 1.5em; padding: 10px 20px;"></td>
             </tr>

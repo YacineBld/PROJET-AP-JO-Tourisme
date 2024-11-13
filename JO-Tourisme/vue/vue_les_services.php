@@ -27,7 +27,7 @@
             
 
            // Vérifier si l'utilisateur est un professionnel (role == 'pro')
-        if (isset($_SESSION['role']) && $_SESSION['role'] == 'pro') {
+        if (isset($_SESSION['role']) && $_SESSION['role'] == 'clientPro') {
             echo "<td>";
             echo "<a class='img-dif' href='index.php?page=2&action=sup&idservice=".$unService['idservice']."'>";
             echo "<img src='images/Delete.png' height='30' width='30' alt='Supprimer'>";
