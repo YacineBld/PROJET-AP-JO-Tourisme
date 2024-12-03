@@ -185,4 +185,25 @@ class ModeleUser
             return null;
         }
     }
+    // Modifier le mot de passe
+    public function modifierMotDePasse($iduser, $new_password) {
+        // Préparation de la requête SQL pour mettre à jour le mot de passe de l'utilisateur
+        $requete = "UPDATE user SET mdp = :new_password WHERE iduser = :iduser";
+       
+        // Préparation de la requête à l'aide de la méthode prepare() de PDO
+        $stmt = $this->pdo->prepare($requete);
+   
+        // Liaison du paramètre :new_password avec la variable $new_password
+        // On précise que ce paramètre est de type chaîne (PDO::PARAM_STR)
+        $stmt->bindParam(':new_password', $new_password, PDO::PARAM_STR);
+   
+        // Liaison du paramètre :iduser avec la variable $iduser
+        // On précise que ce paramètre est de type entier (PDO::PARAM_INT)
+        $stmt->bindParam(':iduser', $iduser, PDO::PARAM_INT);
+   
+        // Exécution de la requête préparée
+        // Cela va mettre à jour le mot de passe dans la base de données pour l'utilisateur spécifié
+        return $stmt->execute(); // Renvoie vrai si l'exécution a réussi, sinon faux
+    }
+
 }

@@ -19,5 +19,7 @@
                     "<td>".$unClientPart["tel"]."</td>";
             echo "</tr>";
     ?>
+                <li><a href="modifier_mdp.php">Modifier mon mot de passe</a></li>
+
 </table>
 </main> 

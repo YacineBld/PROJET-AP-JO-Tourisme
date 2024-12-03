@@ -5,7 +5,7 @@ $controleur = new ControleurUser($serveur, $serveur2, $bdd, $user, $mdp, $mdp2);
 
 <br>
 <center>
-    <h1> Veuillez selectionner votre profil utilisateur </h1>
+    <h1>Veuillez sélectionner votre profil utilisateur</h1>
     <br>
 
     <form action="#" method="POST">
@@ -16,17 +16,18 @@ $controleur = new ControleurUser($serveur, $serveur2, $bdd, $user, $mdp, $mdp2);
             </tr>
         </table>
     </form>
+    <br>
 </center>
 
 <?php
 
+// Si l'utilisateur choisit le profil Particulier
 if (isset($_POST['Particulier'])) {
     require_once("composants/form_inscriptionPar.php");
 }
 
-
+// Si l'utilisateur choisit le profil Professionnel
 if (isset($_POST['Professionnel'])) {
-
     require_once("composants/form_inscriptionPro.php");
 }
 
@@ -39,3 +40,5 @@ if (isset($_POST['InscriptionPro'])) {
     $controleur->insertClientPro($_POST);
 }
 ?>
+
+

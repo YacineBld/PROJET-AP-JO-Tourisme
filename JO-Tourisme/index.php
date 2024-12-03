@@ -4,15 +4,18 @@ require_once("controleur/controleurCategorie.class.php");
 require_once("controleur/controleurEvent.class.php");
 require_once("controleur/controleurService.class.php");
 require_once("controleur/controleurTypeService.class.php");
-require_once("controleur/controleurUser.class.php");
+require_once("controleur/controleurUser.class.php");  // Assurez-vous que ce fichier est bien inclus
 require_once("controleur/config_bdd.php");
-// instanciation du controleur 
+
+// Instanciation de l'objet $c_User et autres contrôleurs
+$c_User = new ControleurUser($serveur, $serveur2, $bdd, $user, $mdp, $mdp2);
+
 $c_Categories = new ControleurCategorie($serveur, $serveur2, $bdd, $user, $mdp, $mdp2);
 $c_Event = new ControleurEvent($serveur, $serveur2, $bdd, $user, $mdp, $mdp2);
 $c_Service = new ControleurService($serveur, $serveur2, $bdd, $user, $mdp, $mdp2);
 $c_TypeService = new ControleurTypeService($serveur, $serveur2, $bdd, $user, $mdp, $mdp2);
-$c_User = new ControleurUser($serveur, $serveur2, $bdd, $user, $mdp, $mdp2);
 
+// Vérifiez ici que $c_User est bien instancié avant de l'utiliser
 ?>
 
 <!DOCTYPE html>
@@ -34,14 +37,12 @@ $c_User = new ControleurUser($serveur, $serveur2, $bdd, $user, $mdp, $mdp2);
     </header>
 
     <main>
-
         <?php
-
         isset($_GET['page']) ? $page =  $_GET['page'] : $page = 0;
-        
+
         switch ($page) {
             case 0:
-                require_once("pages/home.php");
+                require_once("pages/home.php");  // Inclure home.php ici
                 break;
             case 1:
                 require_once("pages/evenement.php");
@@ -68,7 +69,6 @@ $c_User = new ControleurUser($serveur, $serveur2, $bdd, $user, $mdp, $mdp2);
     <footer>
         <?php require_once('composants/footer.php'); ?>
     </footer>
-
 
     <script src="js/script.js" defer></script>
 </body>

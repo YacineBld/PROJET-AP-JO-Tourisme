@@ -20,17 +20,16 @@
             </tr>
             <tr>
                 <td>Numéro Siret : </td>
-                <td class="tdtd"><input type="text" name="num_Siret"></td>
+                <td class="tdtd"><input type="text" name="num_Siret" id="num_Siret" onblur="traiterNumSiret()"></td>
             </tr>
             <tr>
                 <td>Adresse : </td>
-                <td class="tdtd"><input type="text" name="adresse"></td>
+                <td class="tdtd"><input type="text" name="adresse" id="adresse" onblur="traiterAdresse()"></td>
             </tr>
             <tr>
                 <td><input class="boutonP" type="reset" name="Annuler" value="Annuler"></td>
                 <td><input class="boutonP" type="submit" name="InscriptionPro" value="Inscription"></td>
-            </tr>';
+            </tr>
         </table>
     </form>
-  
 </main>

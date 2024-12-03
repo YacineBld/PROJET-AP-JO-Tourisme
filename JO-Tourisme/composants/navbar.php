@@ -36,7 +36,14 @@
             echo "<p class='identification-nav'>" . $_SESSION['email'] . " / " . $_SESSION['role']."</p>";
             echo '</li>';
         }
-
         ?>
+            <?php
+        if (!empty($_SESSION['role']) && $_SESSION['role'] === 'clientPro') {
+            echo '<li>';
+            echo '<a href="vue/vue_modifier_mdp.php">modifier mdp</a>';
+            echo '</li>';
+        }
+        ?>
+        </li>
     </ul>
 </nav>
